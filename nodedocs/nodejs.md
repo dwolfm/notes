@@ -64,7 +64,7 @@ In the api documentation each section will have a number that indicatates its st
 > * check to see if a block does not throw an error
 >
 >#### assert.ifError  
->```assert.ifError(value)```
+> ``` assert.ifError(value) ```  
 > * check for falsey
 
  
