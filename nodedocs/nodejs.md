@@ -11,6 +11,7 @@ In the api documentation each section will have a number that indicatates its st
 * ``` 1 = Ecperimental```
 * ``` 2 = Unstable ```
 * ``` 4 = frozen, well tested and will likley never changed ```
-* ``` 5 = locked, unless serious bugs are found this code will not ever change```
------
+* ``` 5 = locked, unless serious bugs are found this code will not ever change```  
 
+-----
+### [Assertion](https://github.com/slugbyte/notes/blob/master/nodedocs/sections/assert/assert.md)
