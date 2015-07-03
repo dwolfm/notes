@@ -1,8 +1,9 @@
-## Assertion Testing  
+# Assertion Testing  
 
-### Assert  Module
+## Assert  Module
 this module is used for writing unit tests for your applications  
 ``` var assert = require('assert');```  
+**Stability: 5**  
 
 ----
 ## truty falsey
@@ -45,9 +46,9 @@ this module is used for writing unit tests for your applications
 ## throws errors
 
 #### assert.throws  
-``` assert.throws(block, *error, *message)
+``` assert.throws(block, *error, *message)```
  * check to see if a bock thows an error
-  * check to see if the bock thows a specific error
+ * check to see if the bock thows a specific error
 
 #### assert.doesNotThrow  
 ```assert.doesNotThrow(bock, *message)```
