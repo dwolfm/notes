@@ -1,0 +1,22 @@
+{
+  "name": "nodedocs",
+  "version": "1.0.0",
+  "description": "notes and examples for the node documentation",
+  "main": "0-assert.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slugbyte/notes.git"
+  },
+  "author": "dwolfm@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/slugbyte/notes/issues"
+  },
+  "homepage": "https://github.com/slugbyte/notes#readme",
+  "dependencies": {
+    "colors": "^1.1.2"
+  }
+}
