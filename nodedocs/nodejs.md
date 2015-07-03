@@ -15,14 +15,19 @@ In the api documentation each section will have a number that indicatates its st
 -----
 
 
-## Assertion Testing
-#### Assert
-**Stability: 5, locked**  
-this module is used for writing unit tests for your applications
-* assert.fail ```assert.fail( actual, expected, message, opperator)```
+## Assertion Testing  
+
+### Assert  
+this module is used for writing unit tests for your applications  
+``` var assert = require('assert');```  
+
+#### assert.fail 
+```assert.fail( actual, expected, message, opperator)```
  * this prints actual expected and then throws an exception
   * **this seems useless** its basicaly printing wat you put in the fields and then throwing assert eql? true & false
-* assret ```assert(value, *message)```
+
+#### assert
+```assert(value, *message)```
  * test if something is truthy
 * assert.equal ```assert.equal(actual, expected, *message)```
  * test if two things are equal using the == operator
