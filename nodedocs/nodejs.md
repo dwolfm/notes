@@ -19,13 +19,31 @@ In the api documentation each section will have a number that indicatates its st
 
 # Buffer
 
-```var buf = new Buffer();```
-**Stability = 3**
+```var buf = new Buffer();```  
+the buffer class is a global type for dealing with bindary data directly.  
+**Stability = 3**  
 
+## more about
 Pure javascript is Unicode freindly but not nice to bindary data. When dealing with TCP streams or the file system, it's necessary to deal with octet streams. node has a few ways to handle manipulating, consuming, and creating octet streams. 
 Raw dat is stored as instances of the Buffer class A buffer is simular to an array of integers, but corresponds to raw memory allocation outside the V8 heap. a Buffer cannot be resized.
 
 The Buffer class is a global, making it very rare that one would need to ever require('buffer').
+
+## Creating buffers
+ * ``` new Buffer(size) ``` allocates a new buffer of size octets(bytes)
+ * ``` new Buffer(array) ``` allocates a new buffer using an array of octets
+ * ``` new Buffer(buffer) ``` copys the passed buffer data onto a new Buffer instance
+ * ``` new Buffer(str, *encoding) ``` allocates a new buffer containing a givin string, defaults to utf8
+ 
+## Buffer metadata
+* ``` Buffer.isEncoding(encoding) ``` returns true if the encoding is a valid encoding argument, or false otherwise
+* ``` Buffer.isBuffer(obj) ``` test if object is a buffer
+* ``` Buffer.byteLength(str, *encoding) ``` gives the actual byte length of a string. defautls to enc utf8
+* ``` Buffer.concat(list, *totalLength) ``` concatinates the buffers in the list
+ * if no buffers are in the list it returns a buffer of length 0
+ * if 1 buffer is in the list it returns that buffer
+ * if multiple buffers are in the list it returns a new buffer
+ * providing the totalLength makes this much faster
 
 ## converting between buffers and strings
  * Converting between buffers and strings requireds a specific encodeing 
@@ -36,9 +54,11 @@ The Buffer class is a global, making it very rare that one would need to ever re
   * ```base64``` - Base64 sring encoding
   * ```hex``` - encode each byte as two hexadecimal characters
   * **binary** - this is deprecated
-# creating Buffers from an typed aray
+
+## creating Buffers from an typed aray
  * the buffers memory is copied, not shared
- * the buffers memory is interperated as an array, not a byte array  
+ * the buffers memory is interperated as an array, not a byte array
+ 
  ```
 var a = [1,2,3,4];
 
