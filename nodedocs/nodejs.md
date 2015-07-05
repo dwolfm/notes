@@ -38,13 +38,13 @@ The Buffer class is a global, making it very rare that one would need to ever re
   * **binary** - this is deprecated
 # creating Buffers from an typed aray
  * the buffers memory is copied, not shared
- * the buffers memory is interperated as an array, not a byte array
+ * the buffers memory is interperated as an array, not a byte array  
  ``` 
-var a = [1,2,3,4];
-var b = new Buffer(a);
-// b - <Buffer 01 02 03 04>
-var c = new Uint32Array(b)
-// c = [1,2,3,4];
+var a = [1,2,3,4];  
+var b = new Buffer(a);  
+// b - <Buffer 01 02 03 04>  
+var c = new Uint32Array(b)  
+// c = [1,2,3,4];  
 ```
   
   
