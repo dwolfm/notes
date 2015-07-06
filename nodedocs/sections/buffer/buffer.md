@@ -173,3 +173,24 @@ b.writeUIntBE(0x1234567890ab, 0, 6);
 * ``` buf.toJSON() ``` returns a JSON-representation of the Buffer instance.
  * JSON.stringify implicityly calls this when stringifying a buffer
  
+
+# Class: SlowBuffer
+* retunrs an un-pooled Buffer
+* use this to avoid the cobage collection overhead of creating many individually allocated Buffers.
+* this approach improves both performances and memory usage since v8 doent need to track or clean up as many Persistent objects
+* **this should be uses sparingly**
+```
+// need to keep around a few small chunks of memory
+
+var store = [];
+sicket.on('readable', function(){
+  var data = socket.read();
+  // alocate for retained data
+  var sb = new SlowBuffer(10);
+  // copy the data into the new allocation
+  data.copy(sb, 0, 0, 10);
+  store.push(sb);
+});
+```
+
+
