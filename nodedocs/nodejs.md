@@ -16,4 +16,4 @@ In the api documentation each section will have a number that indicatates its st
 
 -----
 ### [Assertion](https://github.com/slugbyte/notes/blob/master/nodedocs/sections/assert/assert.md)
-
+### [Buffer](https://github.com/slugbyte/notes/blob/master/nodedocs/sections/buffer/buffer.md)
