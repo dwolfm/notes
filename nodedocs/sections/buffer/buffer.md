@@ -34,6 +34,7 @@ var b = new Buffer(a);
 var c = new Uint32Array(b)
 // c = [1,2,3,4]; 
 ```
+
 ## Class Methods
 #### buffer info
 * ``` Buffer.isBuffer(obj) ``` test is obj is Buffer -> return boolean
