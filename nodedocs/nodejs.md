@@ -68,6 +68,72 @@ var b = new Buffer(a);
 var c = new Uint32Array(b)
 // c = [1,2,3,4]; 
 ```
-  
-  
+## Class Methods
+* ``` Buffer.isBuffer(obj) ``` test is obj is Buffer -> return boolean
+* ``` Buffer.isEncoding(encoding) ``` test if the encoding is valid -> return boolean
+* ``` Buffer.byteLength(string, *encoding) ``` gives the actual byte lenght of a string. default encoding = utf8
+* ``` Buffer.concat(list, *totalLength) ``` concatinates the buffers in the list
+ * if no buffers are in the list it returns a buffer of length 0
+ * if 1 buffer is in the list it returns that buffer
+ * if multiple buffers are in the list it returns a new buffer
+ * providing the totalLength makes this much faster
+* ``` buf.length ``` retrun the size of the buffer in bytes.
 
+## writing to buffer
+#### indexing a buffer
+ * ```buf[index]``` get and set the octet at index (just like an array)
+
+#### writing strings
+ * ``` buf.write(string, *offset, *length, *encoding)``` * writes a string to the buffer
+ * offset defaults to 0
+ * encoding defalts to utf8
+ * if buffer did not conain enough space to fit the entire string it will wrate a partial amount of the string. 
+ * length defalts to buffer.length
+
+#### writing integers
+* ```buf.writeUIntLE(value, offset, byteLength, *noAssert)```
+* ```buf.writeUIntBE(value, offset, byteLength, *noAssert)```
+* ```buf.writeIntLE(value, offset, byteLength, *noAssert)```
+* ```buf.writeIntBE(value, offset, byteLength, *noAssert)```
+ * **value** - number to be written to buffer
+ * **offset** - must be 0 <= offset <= buf.lenth
+ * **byteLength** - must be 0 < byteLength <= 6 // suports 48 bits of acuracy
+ * **noAssert** - Boolean,  set to true to skip validation off offset
+ * returns the number written
+ ``` 
+var b = new Buffer(6);
+b.writeUIntBE(0x1234567890ab, 0, 6);
+// <Buffer 12 34 56 78 90 ab>
+```
+
+#### reading integers
+* ```buf.readUIntLE(offset, byteLength, *noAssert)```
+* ```buf.readUIntBE(offset, byteLength, *noAssert)```
+* ```buf.readIntLE(offset, byteLength, *noAssert)```
+* ```buf.readIntBE(offset, byteLength, *noAssert)```
+ * **offset** - must be 0 <= offset <= buf.lenth
+ * **byteLength** - must be 0 < byteLength <= 6 // suports 48 bits of acuracy
+ * **noAssert** - Defalut:false
+ * returns the number written
+* ``` ReadUInt16LE(offset, *noAssert)```
+* ``` ReadUInt16BE(offset, *noAssert)```
+* ``` ReadUInt32LE(offset, *noAssert)```
+* ``` ReadUInt32BE(offset, *noAssert)```
+* ``` ReadUInt8LE(offset, *noAssert)```
+* ``` ReadUInt8BE(offset, *noAssert)```
+* ``` ReadInt16LE(offset, *noAssert)```
+* ``` ReadInt16BE(offset, *noAssert)```
+* ``` ReadInt32LE(offset, *noAssert)```
+* ``` ReadInt32BE(offset, *noAssert)```
+* ``` ReadInt8LE(offset, *noAssert)```
+* ``` ReadInt8BE(offset, *noAssert)```
+ * **offset** - number of bytes into array
+ * **noAssert** - Boolean,  set to true to skip validation off offset
+
+#### reading floats and doubles
+* 
+
+
+#### convert to stirng
+#### convert to JSON
+ 
