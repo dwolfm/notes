@@ -56,7 +56,7 @@ var c = new Uint32Array(b)
 * ``` buf.length ``` retrun the size of the buffer in bytes.
 
 #### comparing buffers
-* ```buf.equals(otherBuffer)``` returns boolean of weather this and otherbuffer have the same bytes
+* ``` buf.equals(otherBuffer) ``` returns boolean of weather this and otherbuffer have the same bytes
 * ``` buf.compare(otherbuffer) ``` returns a bynber indicating wheather this comes before or after or is the same as the other buffer in a sort
 
 #### copying, slice, and concat
