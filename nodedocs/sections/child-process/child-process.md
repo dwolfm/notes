@@ -128,6 +128,22 @@
   * stderr - Buffer
  * Return: ChildProcess object
 
-* execfile
+* ``` child_process.execFile(command, *args, *options, *callback) ```
+ * **file** - String,  the filename of the program to run
+ * **args** - Array, of string arguments
+ * **options** - Object,
+  * **cwd** - String, current working dir of the child process
+  * **env** - Object, environment variables 
+  * **encoding** - String, default: 'utf8'
+  * **timeout** - Number, if not zero then it will kill child_process if it runs longer than timeout miliseconds, default:0
+  * **maxBuffer** - Number, if stdout or stderr exceeds maxBuff it will kill child_process, default: (200*1024)
+  * **killSignal** - String, default: 'SIGTERM'
+  * **uid** - Number
+  * **gid** - Number
+ *callback
+  * error - Error
+  * stdio - Buffer
+  * stderr - Buffer
+ * Return: ChildProcess object
 * fork 
 ## sync process creation
