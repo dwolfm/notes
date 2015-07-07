@@ -86,6 +86,7 @@
        SIGTTIN   21,21,26    Stop    Terminal input for background process
        SIGTTOU   22,22,27    Stop    Terminal output for background process
  * Defalit signal is SIGTERM
+```
 
 ## asynch process creation
 * ``` child_process.spawn(command, *args, *options) ``` launches a new process with a given command
