@@ -10,23 +10,11 @@ Raw dat is stored as instances of the Buffer class A buffer is simular to an arr
 The Buffer class is a global, making it very rare that one would need to ever require('buffer').
 
 ## Creating buffers
- * ``` new Buffer(size) ``` allocates a new buffer of size octets(bytes)
- * ``` new Buffer(array) ``` allocates a new buffer using an array of octets
- * ``` new Buffer(buffer) ``` copys the passed buffer data onto a new Buffer instance
- * ``` new Buffer(str, *encoding) ``` allocates a new buffer containing a givin string, Defaluts to utf8
- 
-## Buffer metadata
-* ``` Buffer.isEncoding(encoding) ``` returns true if the encoding is a valid encoding argument, or false otherwise
-* ``` Buffer.isBuffer(obj) ``` test if object is a buffer
-* ``` Buffer.byteLength(str, *encoding) ``` gives the actual byte length of a string. defautls to enc utf8
-* ``` Buffer.concat(list, *totalLength) ``` concatinates the buffers in the list
- * if no buffers are in the list it returns a buffer of length 0
- * if 1 buffer is in the list it returns that buffer
- * if multiple buffers are in the list it returns a new buffer
- * providing the totalLength makes this much faster
-
-## converting between buffers and strings
- * Converting between buffers and strings requireds a specific encodeing 
+* ``` new Buffer(size) ``` allocates a new buffer of size octets(bytes)
+* ``` new Buffer(array) ``` allocates a new buffer using an array of octets
+* ``` new Buffer(buffer) ``` copys the passed buffer data onto a new Buffer instance
+* ``` new Buffer(str, *encoding) ``` allocates a new buffer containing a givin string, Defaluts to utf8
+ * string encodings 
   * ```acii``` - for 7 bit ASCII data
   * ```utf8``` - for multibyte encoded unicode characters
   * ```utf16le``` - 2 or 4 byte, little endian unicode
@@ -34,11 +22,9 @@ The Buffer class is a global, making it very rare that one would need to ever re
   * ```base64``` - Base64 sring encoding
   * ```hex``` - encode each byte as two hexadecimal characters
   * **binary** - this is deprecated
-
-## creating Buffers from an typed aray
- * the buffers memory is copied, not shared
- * the buffers memory is interperated as an array, not a byte array
- 
+ * creating Buffers from an typed aray
+  * the buffers memory is copied, not shared
+  * the buffers memory is interperated as an array, not a byte array
  ```
 var a = [1,2,3,4];
 
@@ -48,6 +34,7 @@ var b = new Buffer(a);
 var c = new Uint32Array(b)
 // c = [1,2,3,4]; 
 ```
+
 ## Class Methods
 #### buffer info
 * ``` Buffer.isBuffer(obj) ``` test is obj is Buffer -> return boolean
@@ -75,7 +62,7 @@ var c = new Uint32Array(b)
  * if multiple buffers are in the list it returns a new buffer
  * providing the totalLength makes this much faster
 
-## writing to buffer
+##  reading and writing buffers
 #### indexing a buffer
  * ```buf[index]``` get and set the octet at index (just like an array)
 
@@ -163,11 +150,20 @@ b.writeUIntBE(0x1234567890ab, 0, 6);
  * **offset** - number of bytes into array, Defaults: 0
  * **end** - number of bytes into array to stop, Defaults, buffer.length
 
+
 #### convert to stirng
 * ``` buf.toString(*encoding, *start, *end) ``` decodes and returns a string from buffer data
  * **encoding** - String, Defalut: 'utf8'
  * **start** - Number, Default: 0
  * **end** - Number, Default: buffer.length
+ * Converting between buffers and strings requireds a specific encodeing 
+  * ```acii``` - for 7 bit ASCII data
+  * ```utf8``` - for multibyte encoded unicode characters
+  * ```utf16le``` - 2 or 4 byte, little endian unicode
+  * ```ucs2``` - alias of utf16le
+  * ```base64``` - Base64 sring encoding
+  * ```hex``` - encode each byte as two hexadecimal characters
+  * **binary** - this is deprecated
 
 #### convert to JSON
 * ``` buf.toJSON() ``` returns a JSON-representation of the Buffer instance.
