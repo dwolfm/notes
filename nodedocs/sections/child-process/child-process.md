@@ -145,5 +145,17 @@
   * stdio - Buffer
   * stderr - Buffer
  * Return: ChildProcess object
-* fork 
+* ```child_process.fork(modulePath, *args, *options)```
+ * **modulePath** - String, the module to run in the child
+ * **args** - Array-Strings,  args for module
+ * **options** - Object
+  * **cwd** - String, current working dir of the child process
+  * **env** - Object, environment vars
+  * **exevPath** - String, exicutable used to create the child process
+  * **execArgv** - Array-Strings, args for the executable
+  * **silent** - Boolean, true = std* piped to parrent, false std* inherited by parent
+  * **uid** - Number
+  * **gid** - Number
+ * Return - ChildProcess object
+
 ## sync process creation
