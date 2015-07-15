@@ -3,17 +3,19 @@
 these notes were taken from **Data Structures and  
 Algorithm Analysis in C++** by Mark Allen Weiss  
 
-
 ## Data Structures
-### lists, stacks, & Queues
-### Trees
+#### lists, stacks, & Queues
+#### Trees
 #### binary tree
 #### AVL tree
 #### splay tree
 #### B-tree
-### Hashing
-### Heaps
-### Graphs
+#### Hashing
+#### Heaps
+#### Graphs
+
+----
+
 ## Advanced Data Structures
 #### top down splay tress
 #### red-black Trees
@@ -35,7 +37,10 @@ Algorithm Analysis in C++** by Mark Allen Weiss
 #### indirect sorting
 #### Bucket sort
 #### External Sorting
-### Algorithm Design Techniques
+
+----
+
+## Algorithm Design Techniques
 #### Greedy Algorithm
 #### Divide and Conquer
 #### Dynamic Programming
