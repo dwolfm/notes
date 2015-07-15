@@ -15,6 +15,6 @@ In the api documentation each section will have a number that indicatates its st
 * ``` 5 = locked, unless serious bugs are found this code will not ever change```  
 
 -----
-### [Assertion](https://github.com/slugbyte/notes/blob/master/nodedocs/sections/assert/assert.md)
-### [Buffer](https://github.com/slugbyte/notes/blob/master/nodedocs/sections/buffer/buffer.md)
-### [Child Process](https://github.com/slugbyte/notes/blob/master/nodedocs/sections/child-process/child-process.md)
+### [Assertion](https://github.com/slugbyte/notes/blob/master/nodedocs/sections/assert/Readme.md)
+### [Buffer](https://github.com/slugbyte/notes/blob/master/nodedocs/sections/buffer/Readme.md)
+### [Child Process](https://github.com/slugbyte/notes/blob/master/nodedocs/sections/child-process/Readme.md)
