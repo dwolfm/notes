@@ -9,11 +9,28 @@ crypto
 #### crypto.setEngine(engine, i\*flags)
 * **engine** - String, id or path to the engine's shared library
 * **flags** - 
+ * ENGINE\_METHOD\_RSA
+ * ENGINE\_METHOD\_DSA
+ * ENGINE\_METHOD\_DH
+ * ENGINE\_METHOD\_RAND
+ * ENGINE\_METHOD\_ECDH
+ * ENGINE\_METHOD\_ECDSA
+ * ENGINE\_METHOD\_CIPHERS
+ * ENGINE\_METHOD\_DIGESTS
+ * ENGINE\_METHOD\_STORE
+ * ENGINE\_METHOD\_PKEY\_METH
+ * ENGINE\_METHOD\_PKEY\_ASN1\_METH
+ * ENGINE\_METHOD\_ALL
+ * ENGINE\_METHOD\_NONE 
 * load and set engine for some/all OpenSSl functions (selected by flags)
 
 #### crypto.getCiphers()
+* Returns an array with the names of suported cipheres
+* there is a lot
+
 #### crypto.getHashes()
-#### crypto.createCredentials(details)
+* Returns an array with the names of suported cipheres
+* there is a lot
 
 ----
 ## Class Hash
@@ -24,8 +41,33 @@ crypto
  * **Collision-Resistant** - unlikely to have to inputs gen same output
  * **Unidirectional** - given just a hash, really hard to find out origional data
 #### crypto.createHash(algorithm)
+* creates and returns a hash object
+* a cryptographich hash with the given algorithm which can be used to generate hash digests
+```
+// this program that take the sha1 sum of a file
+var fs = require('fs');
+var crypto = require('crypto');
+
+fs.readFile('path/to/file', function(err, data){
+  if (err) throw err;
+  var sha = c.createHash('sha1');
+  sha.update(data)
+  console.log('sha.digest('hex'));
+});
+```
+
 #### hash.update(data, \*input\_encodeing) 
-#### hash.digesti(\*encoding)
+* updates the hash content with the given data
+* **data** - String || Buffer
+* **encoding** - String, 'utf8', 'binary,  'ascii'... default: binary
+
+#### hash.digeset(\*encoding)
+* calculates the digest of all teh passed data to be hashed.
+* the **encoding**, can be
+ * `hex`
+ * `binary`
+ * `base64`
+ * if none provided then a buffer is returned
 
 ----
 ## Class Hmac
@@ -34,8 +76,19 @@ crypto
 * use is simular to vanilla hash, but also allows to check the authenticity of data as well as the integreity of said data (as you can using md5 sums
 
 #### crypto.createHmac(algorithm, key)
-#### hmac.update(data)
-#### hmac.digest(\*encoding)
+* creates and returns a hmac object, a cryptographic 
+#### hmac.update(data, \*input\_encodeing) 
+* updates the hmac content with the given data
+* **data** - String || Buffer
+* **encoding** - String, 'utf8', 'binary,  'ascii'... default: binary
+
+#### hmac.digeset(\*encoding)
+* calculates the digest of all teh passed data to be hmaced.
+* the **encoding**, can be
+ * `hex`
+ * `binary`
+ * `base64`
+ * if none provided then a buffer is returned
 
 ----
 ## Class Cipher
