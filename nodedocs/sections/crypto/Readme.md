@@ -93,9 +93,18 @@ fs.readFile('path/to/file', function(err, data){
 ----
 ## Class Cipher
 * Ciphers allow you to encode and decode messages given a password
+* the cipher class is for encrypting data
 #### crypto.createCipher(algorithm, password)
+* creates and retuns a cyper object with a the given algorithm and password
+* it is a **stream** that is both readable and writeable.
+ * the written data is used to compute the hash.
+ * once the writeable side of the stream has ended, use the `read()` method to get enciphered contents.
+ * the update and final methods are legacy
 #### crypto.createCipheriv(algorithm, key, iv)
+* creates and returns a cyper object with the given algorithm, key and iv
+* **key** and **iv** must be `binary` encoded strings or `buffers`
 #### cipher.update(daat, \*input\_encoding, \*output\_encoding)
+* **data** - String or Buffer -  
 #### cipher.final(\*output\_encoding)
 #### cipher.setAutoPadding(auto\_padding=true)
 #### cipher.getAuthTag()
